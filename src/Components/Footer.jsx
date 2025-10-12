@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <p>Created by RMH</p>
+      <p className="Footer">Created by RMH</p>
     </>
   );
 }

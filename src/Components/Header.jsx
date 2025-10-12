@@ -1,7 +1,7 @@
 function Header() {
   return (
     <>
-      <h1>Rob's Weather</h1>
+      <h1 className="Header">Rob's Weather</h1>
     </>
   );
 }
