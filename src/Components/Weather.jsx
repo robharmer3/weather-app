@@ -20,7 +20,6 @@ function Weather() {
         <p>
           {data.latitude}°N {data.longitude}°E {data.elevation}m above sea level
         </p>
-        <p>{new Date(data.current.time).toString()}</p>
         <WeatherImage weatherCode={data.current.weather_code} />
         <h3>
           Temperature: {data.current.temperature_2m}
@@ -38,6 +37,7 @@ function Weather() {
           Wind Direction: {data.current.wind_direction_10m}
           {data.current_units.wind_direction_10m}
         </h3>
+        <p>Updated: {new Date(data.current.time).toString()}</p>
       </>
     );
   }
