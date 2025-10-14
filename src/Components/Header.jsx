@@ -1,8 +1,9 @@
 function Header() {
   return (
-    <>
-      <h1 className="Header">Rob's Weather</h1>
-    </>
+    <div className="Header">
+      <h1>TEMPEST</h1>
+      <p>Here for all you weather needs</p>
+    </div>
   );
 }
 

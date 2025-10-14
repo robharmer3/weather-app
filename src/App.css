@@ -29,41 +29,69 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
+header {
+  border: solid;
+  border-radius: 8px;
+  border-color: skyblue;
+}
+
+main {
+  margin-top: 10px;
+  border: solid;
+  border-radius: 8px;
+  border-color: skyblue;
+  max-height: fit-content;
+}
+
+footer {
+  border: solid;
+  border-radius: 8px;
+  border-color: skyblue;
+}
+
+.outer-box {
+  display: inline-flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .Header {
   border: solid;
+  border-radius: 8px;
   border-color: skyblue;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
 }
 
 .Footer {
   border: solid;
-  border-color: skyblue;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-img {
-  border: solid;
-  border-color: skyblue;
   border-radius: 8px;
+  border-color: skyblue;
+  padding: 10px;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
   margin-bottom: 0;
+}
+
+h2 {
+  margin: 10px;
+}
+
+.box {
+  border: solid;
+  border-radius: 8px;
+  border-color: skyblue;
+  height: 125px;
+  width: 225px;
+  margin: 10px;
+}
+
+.temp {
+  font-size: 100px;
+}
+.weather {
+  font-size: 50px;
 }

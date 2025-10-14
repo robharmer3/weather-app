@@ -6,11 +6,9 @@ import Weather from "./Components/Weather";
 function App() {
   return (
     <>
-      <div>
-        <Header />
-        <Weather />
-        <Footer />
-      </div>
+      <Header />
+      <Weather />
+      <Footer />
     </>
   );
 }
