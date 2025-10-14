@@ -1,7 +1,7 @@
 function Wind({ speed, speedUnits, direction, dirUnits }) {
   return (
-    <div className="box">
-      <h2>Wind 🌀</h2>
+    <div className="data">
+      <h4>Wind 🌀</h4>
       <p>
         {speed}
         {speedUnits}

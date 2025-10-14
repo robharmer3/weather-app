@@ -1,7 +1,7 @@
 function Sunset({ sunset }) {
   return (
-    <div className="box">
-      <h2>Sunset 🌝</h2>
+    <div className="data">
+      <h4>Sunset 🌝</h4>
       <p>{sunset.slice(11)}</p>
     </div>
   );

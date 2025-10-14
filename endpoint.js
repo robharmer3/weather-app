@@ -14,4 +14,16 @@ export function getWeather() {
     });
 }
 
-// https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,precipitation,weather_code,wind_speed_10m
+const apiArchive = axios.create({
+  baseURL: "https://archive-api.open-meteo.com/v1/archive",
+});
+
+export function getArchiveWeather(date) {
+  return apiArchive
+    .get(
+      `/?latitude=53.4809&longitude=-2.2374&start_date=${date}&end_date=${date}&daily=weather_code,temperature_2m_max,temperature_2m_mean,temperature_2m_min,precipitation_sum`
+    )
+    .then(({ data }) => {
+      return data;
+    });
+}

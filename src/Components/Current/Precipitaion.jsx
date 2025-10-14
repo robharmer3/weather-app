@@ -1,7 +1,7 @@
 function Precipitation({ precipitation, units }) {
   return (
-    <div className="box">
-      <h2>Precipitation 🌧️</h2>
+    <div className="data">
+      <h4>Precipitation 🌧️</h4>
       <p>
         {precipitation}
         {units}

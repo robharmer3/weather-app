@@ -5,10 +5,10 @@ function Temperature({ temperature, units, feelsLike }) {
         {temperature}
         {units}
       </h2>
-      <h2>
+      <h3>
         Feels Like: {feelsLike}
         {units}
-      </h2>
+      </h3>
     </>
   );
 }

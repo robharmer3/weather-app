@@ -22,76 +22,109 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: skyblue;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: red;
 }
 
 header {
   border: solid;
   border-radius: 8px;
-  border-color: skyblue;
+  border-color: blueviolet;
 }
 
 main {
   margin-top: 10px;
   border: solid;
   border-radius: 8px;
-  border-color: skyblue;
+  border-color: blueviolet;
   max-height: fit-content;
 }
 
 footer {
   border: solid;
   border-radius: 8px;
-  border-color: skyblue;
+  border-color: blueviolet;
 }
 
-.outer-box {
+h1 {
+  font-size: 2.4em;
+  line-height: 1.1;
+  margin: auto;
+}
+h2 {
+  font-size: 3.2em;
+  margin: 5px;
+}
+h3 {
+  font-size: 1.8em;
+  margin: 8px;
+}
+h4 {
+  font-size: 1.8em;
+  margin: 5px;
+}
+
+img {
+  min-height: 225px;
+}
+
+.weather-data {
   display: inline-flex;
   place-items: center;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-
-.Header {
+.data {
   border: solid;
   border-radius: 8px;
-  border-color: skyblue;
-  margin-bottom: 10px;
-}
-
-.Footer {
-  border: solid;
-  border-radius: 8px;
-  border-color: skyblue;
-  padding: 10px;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  margin-bottom: 0;
-}
-
-h2 {
-  margin: 5px;
-}
-
-.box {
-  border: solid;
-  border-radius: 8px;
-  border-color: skyblue;
-  height: 125px;
+  border-color: blueviolet;
+  height: 145px;
   width: 225px;
   margin: 10px;
 }
 
+.title {
+  border: solid;
+  border-radius: 8px;
+  border-color: blueviolet;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.title h1 {
+  margin-top: 10px;
+}
+
+.signature {
+  border: solid;
+  border-radius: 8px;
+  border-color: blueviolet;
+  padding: 10px;
+}
+
 .temp {
-  font-size: 80px;
+  font-size: 60px;
 }
 .weather {
   font-size: 50px;
+}
+
+#canvas {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: 0;
+  padding: 0;
+}
+
+#date {
+  margin: 10px;
 }

@@ -1,7 +1,7 @@
-import useFetchApi from "../../endpoints Hook";
-import { getWeather } from "../../endpoint";
+import useFetchApi from "../../../endpoints Hook";
+import { getWeather } from "../../../endpoint";
 import WeatherImage from "./Weather_image";
-import WeatherLocation from "./Location";
+import WeatherLocation from "../Common/Location";
 import Temperature from "./Temperature";
 import Precipitation from "./Precipitaion";
 import Wind from "./Wind";
@@ -17,14 +17,14 @@ function Weather() {
   }
 
   if (isError) {
-    return <p>...something went wrong!...</p>;
+    return <p>...OOPS!..something went wrong!...</p>;
   }
 
   if (data) {
     return (
       <>
         <header>
-          <h2>Current Manchester Weather</h2>
+          <h2>Manchester</h2>
           <WeatherLocation
             latitude={data.latitude}
             longitude={data.longitude}
@@ -39,7 +39,7 @@ function Weather() {
             feelsLike={data.current.apparent_temperature}
           />
         </main>
-        <div className="outer-box">
+        <div className="weather-data">
           <Precipitation
             precipitation={data.current.precipitation}
             units={data.current_units.precipitation}
@@ -55,7 +55,7 @@ function Weather() {
             units={data.current_units.relative_humidity_2m}
           />
         </div>
-        <div className="outer-box">
+        <div className="weather-data">
           <Sunrise sunrise={data.daily.sunrise[0]} />
           <Sunset sunset={data.daily.sunset[0]} />
         </div>
