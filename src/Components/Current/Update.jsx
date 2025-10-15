@@ -1,9 +1,8 @@
 import { getWeather } from "../../../endpoint";
 import useFetchApi from "../../../endpoints Hook";
-import Error from "../Error";
 import Loading from "../Loading";
 
-function Humidity({ latitude, longitude }) {
+function Update({ latitude, longitude }) {
   const { isLoading, isError, data } = useFetchApi(
     getWeather,
     latitude,
@@ -19,16 +18,8 @@ function Humidity({ latitude, longitude }) {
   }
 
   if (data) {
-    return (
-      <div className="data">
-        <h4>Humidity 💧</h4>
-        <p>
-          {data.current.relative_humidity_2m}
-          {data.current_units_relative_hunidity_2m}
-        </p>
-      </div>
-    );
+    return <p>Last Updated: {new Date(data.current.time).toString()}</p>;
   }
 }
 
-export default Humidity;
+export default Update;

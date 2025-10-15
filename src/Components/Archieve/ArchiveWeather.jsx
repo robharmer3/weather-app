@@ -4,22 +4,26 @@ import { getArchiveWeather } from "../../../endpoint";
 import WeatherImage from "../Current/Weather_image";
 import WeatherLocation from "../Common/Location";
 import ArchiveTemp from "./ArchiveTemp";
+import { Link } from "react-router-dom";
+import Loading from "../Loading";
+import Error from "../Error";
 
-function ArchiveWeather() {
+function ArchiveWeather({ latitude, longitude }) {
   const [date, setDate] = useState("");
   const { isLoading, isError, data } = useFetchApi(getArchiveWeather, date);
-
+  console.log(latitude);
   function handleSubmit(event) {
     setDate(() => {
       return event.target.value;
     });
   }
+
   if (isLoading) {
-    return <p>...hold fast...</p>;
+    return <Loading />;
   }
 
   if (isError) {
-    return <p>...OOPS!..something went wrong!...</p>;
+    return <Error />;
   }
 
   if (data) {
@@ -57,6 +61,11 @@ function ArchiveWeather() {
             units={data.daily_units.temperature_2m_max}
           />
         </main>
+        <div className="link-box">
+          <Link to="/current">
+            <h2>Current Weather ↪</h2>
+          </Link>
+        </div>
       </>
     );
   }

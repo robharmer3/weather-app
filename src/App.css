@@ -22,11 +22,11 @@
 
 a {
   font-weight: 500;
-  color: skyblue;
+  color: rgba(255, 255, 255, 0.87);
   text-decoration: inherit;
 }
 a:hover {
-  color: red;
+  color: blue;
 }
 
 header {
@@ -126,5 +126,12 @@ img {
 }
 
 #date {
+  margin: 10px;
+}
+
+.link-box {
+  border: solid;
+  border-radius: 8px;
+  border-color: blueviolet;
   margin: 10px;
 }

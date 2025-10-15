@@ -1,21 +1,13 @@
 import { Link } from "react-router-dom";
+import Search from "./Search";
+import { useState } from "react";
 
 function Home() {
+  const [searchLocaton, setSearchLocaton] = useState("");
+
   return (
     <>
-      <nav>
-        {/* <Link to="/">
-          <h2>Home</h2>
-        </Link> */}
-        <Link to="/current">
-          <h2>Current Weather</h2>
-          <h3>(in Manchester)</h3>
-        </Link>
-        <Link to="/archive">
-          <h2>Archive Weather</h2>
-          <h3>(in Manchester)</h3>
-        </Link>
-      </nav>
+      <Search setSearchLocaton={setSearchLocaton} />
     </>
   );
 }
