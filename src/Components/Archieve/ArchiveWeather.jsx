@@ -1,9 +1,7 @@
 import { useContext, useState } from "react";
 import useFetchApi from "../../../endpoints Hook";
-import { getArchiveWeather, getLocation } from "../../../endpoint";
-import WeatherImage from "../Current/Weather_image";
+import { getLocation } from "../../../endpoint";
 import WeatherLocation from "../Common/Location";
-import ArchiveTemp from "./ArchiveTemp";
 import { Link } from "react-router-dom";
 import Loading from "../Loading";
 import Error from "../Error";
