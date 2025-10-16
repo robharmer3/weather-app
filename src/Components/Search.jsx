@@ -19,14 +19,10 @@ function Search({}) {
 
   return (
     <>
-      <header>
-        <h2>Welcome to TEMPEST 🌦️</h2>
-        <p>blah blah blah</p>
-      </header>
       <main>
         <form onSubmit={handleSubmit}>
           <label htmlFor="location" className="label">
-            <h3>Please enter your town or city:</h3>
+            <h3>Please enter your town or city for current weather:</h3>
           </label>
           <input
             type="text"

@@ -36,13 +36,14 @@ function ArchiveWeather() {
         <header>
           <label htmlFor="start">
             <h3>Please select a date</h3>
-            <p>Only select a date in the past</p>
+            <p>(Only select a date in the past)</p>
           </label>
           <input
             type="date"
             id="date"
             name="trip-start"
             max={Date.now()}
+            value={date}
             onChange={handleSubmit}
           />
         </header>
@@ -57,11 +58,6 @@ function ArchiveWeather() {
         </main>
         <main>
           <ArchieveWeatherImage
-            latitude={results[0].latitude}
-            longitude={results[0].longitude}
-            date={date}
-          />
-          <ArchiveTemp
             latitude={results[0].latitude}
             longitude={results[0].longitude}
             date={date}
