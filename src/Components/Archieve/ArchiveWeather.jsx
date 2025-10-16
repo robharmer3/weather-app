@@ -14,9 +14,7 @@ function ArchiveWeather() {
   const { location, setLocation } = useContext(LocationContext);
   const { isLoading, isError, data } = useFetchApi(getLocation, location);
   const { results } = data;
-
   const [date, setDate] = useState("2025-10-16");
-  // const { isLoading, isError, data } = useFetchApi(getArchiveWeather, date);
 
   function handleSubmit(event) {
     setDate(() => {
