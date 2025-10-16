@@ -2,12 +2,11 @@ import Granim from "granim";
 import "./App.css";
 import Header from "./Components/Common/Header";
 import Footer from "./Components/Common/Footer";
-import Weather from "./Components/Weather";
+import Weather from "./Components/Current/Weather";
 import { useEffect } from "react";
 import ArchiveWeather from "./Components/Archieve/ArchiveWeather";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
-import Search from "./Components/Search";
 
 function App() {
   useEffect(() => {
