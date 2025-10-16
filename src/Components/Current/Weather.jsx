@@ -1,23 +1,22 @@
-import useFetchApi from "../../endpoints Hook";
-import { getLocation, getWeather } from "../../endpoint";
-import WeatherImage from "./Current/Weather_image";
-import WeatherLocation from "./Common/Location";
-import Temperature from "./Current/Temperature";
-import Precipitation from "./Current/Precipitaion";
-import Wind from "./Current/Wind";
-import Humidity from "./Current/Humidity";
-import Sunset from "./Current/Sunset";
-import Sunrise from "./Current/Sunrise";
-import { Link, useSearchParams } from "react-router-dom";
-import Loading from "./Loading";
-import Error from "./Error";
-import Search from "./Search";
-import Update from "./Current/Update";
+import useFetchApi from "../../../endpoints Hook";
+import { getLocation } from "../../../endpoint";
+import WeatherImage from "./Weather_image";
+import WeatherLocation from "../Common/Location";
+import Temperature from "./Temperature";
+import Precipitation from "./Precipitaion";
+import Wind from "./Wind";
+import Humidity from "./Humidity";
+import Sunset from "./Sunset";
+import Sunrise from "./Sunrise";
+import { Link } from "react-router-dom";
+import Loading from "../Loading";
+import Error from "../Error";
+import Update from "./Update";
+import { useContext } from "react";
+import { LocationContext } from "../../Context/Location";
 
 function Weather() {
-  // const { isLoading, isError, data } = useFetchApi(getWeather);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const location = searchParams.get("location");
+  const { location, setLocation } = useContext(LocationContext);
   const { isLoading, isError, data } = useFetchApi(getLocation, location);
 
   const { results } = data;

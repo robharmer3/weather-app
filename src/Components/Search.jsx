@@ -1,17 +1,20 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { LocationContext } from "../Context/Location";
 
-function Search({ setSearchLocaton }) {
+function Search({}) {
   const navigate = useNavigate();
   const [searchInput, setSearchInput] = useState("");
+  const { location, setLocation } = useContext(LocationContext);
 
   function handleInput(event) {
     setSearchInput(event.target.value);
   }
 
-  function handleSubmit() {
-    setSearchLocaton(searchInput);
-    navigate("/current");
+  function handleSubmit(event) {
+    event.preventDefault();
+    setLocation(searchInput);
+    navigate(`/current`);
   }
 
   return (

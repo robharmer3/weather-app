@@ -1,17 +1,23 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useFetchApi from "../../../endpoints Hook";
-import { getArchiveWeather } from "../../../endpoint";
+import { getArchiveWeather, getLocation } from "../../../endpoint";
 import WeatherImage from "../Current/Weather_image";
 import WeatherLocation from "../Common/Location";
 import ArchiveTemp from "./ArchiveTemp";
 import { Link } from "react-router-dom";
 import Loading from "../Loading";
 import Error from "../Error";
+import { LocationContext } from "../../Context/Location";
+import ArchieveWeatherImage from "./ArchieveWeatherImage";
 
-function ArchiveWeather({ latitude, longitude }) {
-  const [date, setDate] = useState("");
-  const { isLoading, isError, data } = useFetchApi(getArchiveWeather, date);
-  console.log(latitude);
+function ArchiveWeather() {
+  const { location, setLocation } = useContext(LocationContext);
+  const { isLoading, isError, data } = useFetchApi(getLocation, location);
+  const { results } = data;
+
+  const [date, setDate] = useState("2025-10-16");
+  // const { isLoading, isError, data } = useFetchApi(getArchiveWeather, date);
+
   function handleSubmit(event) {
     setDate(() => {
       return event.target.value;
@@ -42,23 +48,25 @@ function ArchiveWeather({ latitude, longitude }) {
             onChange={handleSubmit}
           />
         </header>
-
         <main>
-          <h2>Manchester</h2>
+          <h2>{results[0].name}</h2>
           <WeatherLocation
-            latitude={data.latitude}
-            longitude={data.longitude}
-            elevation={data.elevation}
+            latitude={results[0].latitude}
+            longitude={results[0].longitude}
+            elevation={results[0].elevation}
           />
-          <p>Date: {data.daily.time}</p>
+          <p>Date: {date}</p>
         </main>
         <main>
-          <WeatherImage weatherCode={data.daily.weather_code} />
+          <ArchieveWeatherImage
+            latitude={results[0].latitude}
+            longitude={results[0].longitude}
+            date={date}
+          />
           <ArchiveTemp
-            maxTemp={data.daily.temperature_2m_max}
-            minTemp={data.daily.temperature_2m_min}
-            meanTemp={data.daily.temperature_2m_mean}
-            units={data.daily_units.temperature_2m_max}
+            latitude={results[0].latitude}
+            longitude={results[0].longitude}
+            date={date}
           />
         </main>
         <div className="link-box">

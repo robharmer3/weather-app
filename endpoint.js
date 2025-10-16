@@ -16,10 +16,10 @@ export function getWeather(lat, long) {
 const apiArchive = axios.create({
   baseURL: "https://archive-api.open-meteo.com/v1/archive",
 });
-export function getArchiveWeather(date) {
+export function getArchiveWeather(date, longitude, latitude) {
   return apiArchive
     .get(
-      `/?latitude=53.4809&longitude=-2.2374&start_date=${date}&end_date=${date}&daily=weather_code,temperature_2m_max,temperature_2m_mean,temperature_2m_min,precipitation_sum`
+      `/?latitude=${latitude}&longitude=${longitude}&start_date=${date}&end_date=${date}&daily=weather_code,temperature_2m_max,temperature_2m_mean,temperature_2m_min,precipitation_sum`
     )
     .then(({ data }) => {
       return data;
